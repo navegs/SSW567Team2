@@ -8,7 +8,7 @@
 
 ## To Do:
 
-[buggyTriangle.py](/buggyTriangle.py) contains an implementation of the classifyTriangle() function with a few bugs.  
+[buggyTriangle.py](buggyTriangle.py) contains an implementation of the classifyTriangle() function with a few bugs.  
 
 Download and review the buggyTriangle.py file which includes the classifyTriangle() function implemented in Python.  You may choose either to use the Python code or you may replicate the Python logic in the language of your choice, e.g. Java.   If you choose to use some other language, you can just copy your code from Assignment 1 BUT replace your classifyTriangle() logic with the logic from buggyTriangle.py.
 
