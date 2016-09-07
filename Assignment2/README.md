@@ -21,7 +21,7 @@ Run the same test set on your improved classifyTriangle() function and upload a 
 
 ## Deliverables:
 
-1. Include a written test report in your assignment summary with the results of running your test set against the buggy implementation of classifyTriangle in buggyTriangle.pyPreview the documentView in a new window using  the following format:
+1. Include a written test report in your assignment summary with the results of running your test set against the buggy implementation of classifyTriangle in buggyTriangle.pyPreview the documentView in a new window using  the following format:  
 Test ID Input | Expected Results | Actual Result | Pass or Fail
 ---|---|---|---
    |   |   | 
@@ -32,12 +32,12 @@ Test ID Input | Expected Results | Actual Result | Pass or Fail
 
 4. Upload a screen dump or output file of running your test set on the improved classifyTriangle() function
 
-5. Include a written test report in your assignment summary with the results of running your test set against the improved implementation of classifyTriangle using  the following format:
+5. Include a written test report in your assignment summary with the results of running your test set against the improved implementation of classifyTriangle using  the following format:  
 Test ID Input | Expected Results | Actual Result | Pass or Fail
 ---|---|---|---
    |   |   | 
                  
-6.  Your assignment summary should include a matrix as shown below in the summary results along with a description of the strategy you used to decide when you had a sufficient number of test cases. 
+6.  Your assignment summary should include a matrix as shown below in the summary results along with a description of the strategy you used to decide when you had a sufficient number of test cases.   
 |   | Test Run 1 | Test Run2 | ... |
 |---|---|---|---|
 |Tests Planned | | | |
