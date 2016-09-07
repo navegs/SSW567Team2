@@ -1,4 +1,6 @@
-# Week 2:Project Objectives
+# Assignment 2 Description
+
+## Week 2: Project Objectives
 
 * Identify appropriate test strategies for the Triangle problem
 
@@ -7,18 +9,17 @@
 * Fix all of the bugs you find in the classifyTriangle() function in [buggyTriangle.py](buggyTriangle.py). Don't simply replace my logic with your logic from Assignment 1.  Test teams typically don't have the luxury of rewriting code from scratch and instead must fix what's delivered to the test team.   
 
 ## To Do:
-
 [buggyTriangle.py](buggyTriangle.py) contains an implementation of the classifyTriangle() function with a few bugs.  
 
-Download and review the [buggyTriangle.py](buggyTriangle.py) file which includes the classifyTriangle() function implemented in Python.  You may choose either to use the Python code or you may replicate the Python logic in the language of your choice, e.g. Java.   If you choose to use some other language, you can just copy your code from Assignment 1 BUT replace your classifyTriangle() logic with the logic from [buggyTriangle.py](buggyTriangle.py).
+1. Download and review the [buggyTriangle.py](buggyTriangle.py) file which includes the classifyTriangle() function implemented in Python.  You may choose either to use the Python code or you may replicate the Python logic in the language of your choice, e.g. Java.   If you choose to use some other language, you can just copy your code from Assignment 1 BUT replace your classifyTriangle() logic with the logic from [buggyTriangle.py](buggyTriangle.py).
 
-Create a set of test cases for the Triangle problem that adequately tests the classifyTriangle() function to find problems.
+2. Create a set of test cases for the Triangle problem that adequately tests the classifyTriangle() function to find problems.
 
-Run your test set against the classifyTriangle() function and upload a test report in the format specified below.  This report shows the results of testing the initial classifyTriangle() implementation.
+3. Run your test set against the classifyTriangle() function and upload a test report in the format specified below.  This report shows the results of testing the initial classifyTriangle() implementation.
 
-After you've completed defining your test set and running it against the buggy classifyTriangle() function, update the logic in classifytTriangle() to fix all of the logic bugs you found by code inspection and with your test cases.
+4. After you've completed defining your test set and running it against the buggy classifyTriangle() function, update the logic in classifytTriangle() to fix all of the logic bugs you found by code inspection and with your test cases.
 
-Run the same test set on your improved classifyTriangle() function and upload a test report on your improved logic 
+5. Run the same test set on your improved classifyTriangle() function and upload a test report on your improved logic 
 
 ## Deliverables:
 
