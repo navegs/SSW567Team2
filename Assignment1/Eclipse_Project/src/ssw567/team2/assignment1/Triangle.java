@@ -19,13 +19,11 @@ public class Triangle {
 			 triType = "Scalene"; // all 3 sides are different
 		}
 		
-		if (triType == "Scalene") {
-			if (a*a + b*b == c*c) {
-				angleType = " right";
-			}
+		if ((a*a + b*b == c*c) || (a*a + c*c == b*b) || (b*b + c*c == a*a)) {
+			angleType = "right ";
 		}
 		
-		return angleType + " " + triType;
+		return angleType +  triType;
 	}
 
 	public static void main(String[] args) {
@@ -43,6 +41,7 @@ public class Triangle {
 
 		answer = classifyTriangle(3,4,5);
 		System.out.println("Sides of 3,4,5 - " + answer + " triangle");
+
 	}
 
 }
