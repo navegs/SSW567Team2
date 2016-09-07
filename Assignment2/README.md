@@ -2,15 +2,15 @@
 
 * Identify appropriate test strategies for the Triangle problem
 
-* Create and run a test set that you feel adequately tests the program logic in the classifyTriangle() function in buggyTriangle.pyPreview the documentView in a new window and upload your initial findings in a formal test report described below.
+* Create and run a test set that you feel adequately tests the program logic in the classifyTriangle() function in [buggyTriangle.py](buggyTriangle.py) and upload your initial findings in a formal test report described below.
 
-* Fix all of the bugs you find in the classifyTriangle() function in buggyTriangle.pyPreview the documentView in a new window. Don't simply replace my logic with your logic from Assignment 1.  Test teams typically don't have the luxury of rewriting code from scratch and instead must fix what's delivered to the test team.   
+* Fix all of the bugs you find in the classifyTriangle() function in [buggyTriangle.py](buggyTriangle.py). Don't simply replace my logic with your logic from Assignment 1.  Test teams typically don't have the luxury of rewriting code from scratch and instead must fix what's delivered to the test team.   
 
 ## To Do:
 
 [buggyTriangle.py](buggyTriangle.py) contains an implementation of the classifyTriangle() function with a few bugs.  
 
-Download and review the buggyTriangle.py file which includes the classifyTriangle() function implemented in Python.  You may choose either to use the Python code or you may replicate the Python logic in the language of your choice, e.g. Java.   If you choose to use some other language, you can just copy your code from Assignment 1 BUT replace your classifyTriangle() logic with the logic from buggyTriangle.py.
+Download and review the [buggyTriangle.py](buggyTriangle.py) file which includes the classifyTriangle() function implemented in Python.  You may choose either to use the Python code or you may replicate the Python logic in the language of your choice, e.g. Java.   If you choose to use some other language, you can just copy your code from Assignment 1 BUT replace your classifyTriangle() logic with the logic from [buggyTriangle.py](buggyTriangle.py).
 
 Create a set of test cases for the Triangle problem that adequately tests the classifyTriangle() function to find problems.
 
@@ -22,7 +22,7 @@ Run the same test set on your improved classifyTriangle() function and upload a 
 
 ## Deliverables:
 
-1. Include a written test report in your assignment summary with the results of running your test set against the buggy implementation of classifyTriangle in buggyTriangle.py using  the following format:  
+1. Include a written test report in your assignment summary with the results of running your test set against the buggy implementation of classifyTriangle in [buggyTriangle.py](buggyTriangle.py) using  the following format:  
 
 Test ID Input | Expected Results | Actual Result | Pass or Fail
 ---|---|---|---
