@@ -35,16 +35,16 @@ Test ID Input | Expected Results | Actual Result | Pass or Fail
 5. Include a written test report in your assignment summary with the results of running your test set against the improved implementation of classifyTriangle using  the following format:
 
 Test ID Input | Expected Results | Actual Result | Pass or Fail
----|---|---
-| | |   
+---|---|---|---
+   |   |   | 
                  
 6.  Your assignment summary should include a matrix as shown below in the summary results along with a description of the strategy you used to decide when you had a sufficient number of test cases. 
 
 
-   | Test Run 1 | Test Run2 | ...
----|---|---|---
-Tests Planned | | | 
-Tests Executed | | | 
-Tests Passed  | | | 
-Defects Found  | | | 
-Defects Fixed  | | | 
+|   | Test Run 1 | Test Run2 | ... |
+|---|---|---|---|
+|Tests Planned | | | |
+|Tests Executed | | | |
+|Tests Passed  | | | |
+|Defects Found  | | | |
+|Defects Fixed  | | | |
