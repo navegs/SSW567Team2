@@ -1,4 +1,4 @@
-# SSW 567 Team2 Git Project
+# SSW 567 Team2 Github Repository
 
 This purpose of this project is to provide a configuration management location for SSW567 Team 2  Assignment source code. Ideally, this single git project will be used for all assignments, preventing the team from having to create multiple repositories. While it's best practice to keep repositories seperate for larger projects and applications, this single repository should suffice for academic purposes.
 
