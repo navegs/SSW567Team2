@@ -8,6 +8,9 @@ public class TriangleTest extends TestCase {
 		
 		Triangle t1 = new Triangle();
 		
+		// negative values 
+		assertEquals("Not a", t1.classifyTriangle(-1,-1,-1));	
+
 		assertEquals("Not a", t1.classifyTriangle(1,2,4));
 		assertEquals("Not a", t1.classifyTriangle(2,4,1));
 		assertEquals("Not a", t1.classifyTriangle(4,1,2));
