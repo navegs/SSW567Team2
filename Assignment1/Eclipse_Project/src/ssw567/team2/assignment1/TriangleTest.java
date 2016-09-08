@@ -1,32 +1,79 @@
 package ssw567.team2.assignment1;
 
-import junit.framework.TestCase;
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
+import org.junit.Before;
 
-public class TriangleTest extends TestCase {
-		
-	public void testClassifyTriangle() {
-		
-		Triangle t1 = new Triangle();
-		
-		// negative values 
-		assertEquals("Not a", t1.classifyTriangle(-1,-1,-1));	
+public class TriangleTest {
 
-		assertEquals("Not a", t1.classifyTriangle(1,2,4));
-		assertEquals("Not a", t1.classifyTriangle(2,4,1));
-		assertEquals("Not a", t1.classifyTriangle(4,1,2));
+	Triangle tester;
+	
+	@Before
+	public void setUp() throws Exception {
 		
-		assertEquals("Equilateral", t1.classifyTriangle(3,3,3));
+		tester = new Triangle();
 		
-		assertEquals("Isosceles", t1.classifyTriangle(3,3,5));
-		assertEquals("Isosceles", t1.classifyTriangle(3,5,3));
-		assertEquals("Isosceles", t1.classifyTriangle(5,3,3));
-		
-		assertEquals("Scalene", t1.classifyTriangle(1,2,3));
-		assertEquals("Scalene", t1.classifyTriangle(2,3,1));
-		assertEquals("Scalene", t1.classifyTriangle(3,1,2));
-
-		assertEquals("right Scalene", t1.classifyTriangle(3,4,5));	
-		assertEquals("right Scalene", t1.classifyTriangle(4,5,3));	
-		assertEquals("right Scalene", t1.classifyTriangle(5,3,4));	
 	}
+	
+	@Test
+	public void isoscelesTest() {
+
+		assertEquals("Isosceles", tester.classifyTriangle(3,3,5));
+		assertEquals("Isosceles", tester.classifyTriangle(3,5,3));
+		assertEquals("Isosceles", tester.classifyTriangle(5,3,3));
+		
+	}
+
+	@Test
+	public void scaleneTest() {
+
+		assertEquals("Scalene", tester.classifyTriangle(1,2,3));
+		assertEquals("Scalene", tester.classifyTriangle(2,3,1));
+		assertEquals("Scalene", tester.classifyTriangle(3,1,2));
+
+	}
+
+	@Test
+	public void equilateralTest() {
+
+		assertEquals("Equilateral", tester.classifyTriangle(3,3,3));
+
+	}
+
+	@Test
+	public void invalidTriangleTest() {
+
+		// Negative Numbers for each parameter
+		assertEquals("Not a", tester.classifyTriangle(-1,4,8));
+		assertEquals("Not a", tester.classifyTriangle(4,-1,8));
+		assertEquals("Not a", tester.classifyTriangle(4,8,-1));
+		
+		// Zeros for each parameter
+		assertEquals("Not a", tester.classifyTriangle(0,4,8));
+		assertEquals("Not a", tester.classifyTriangle(4,0,8));
+		assertEquals("Not a", tester.classifyTriangle(4,8,0));
+		
+		// Not a Triangle
+		assertEquals("Not a", tester.classifyTriangle(1,2,4));
+		assertEquals("Not a", tester.classifyTriangle(2,4,1));
+		assertEquals("Not a", tester.classifyTriangle(4,1,2));
+
+	}
+	
+	@Test
+	public void trueRightAngleTest() {
+		
+		assertEquals(true, tester.isRightAngle(3, 4, 5));
+		assertEquals(true, tester.isRightAngle(4, 5, 3));	
+		assertEquals(true, tester.isRightAngle(5, 3, 4));
+
+	}
+	
+	@Test
+	public void falseRightAngleTest() {
+		
+		assertEquals(false, tester.isRightAngle(2, 4, 6));
+
+	}
+	
 }

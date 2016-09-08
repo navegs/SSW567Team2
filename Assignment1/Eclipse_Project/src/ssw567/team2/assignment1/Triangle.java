@@ -19,18 +19,31 @@ public class Triangle {
 			 triType = "Scalene"; // all 3 sides are different
 		}
 		
-		if ((a*a + b*b == c*c) || (a*a + c*c == b*b) || (b*b + c*c == a*a)) {
-			angleType = "right ";
+		if (isRightAngle(a, b, c)) {
+			angleType = "Right ";
 		}
 		
 		return angleType +  triType;
 	}
 
+	public boolean isRightAngle(int a, int b, int c) {
+		boolean result = false;
+		
+		if ((a*a + b*b == c*c) || (a*a + c*c == b*b) || (b*b + c*c == a*a)) {
+			result = true;
+		}
+		
+		return result;
+	}
+	
 	public static void main(String[] args) {
 		// create new triangle
 		Triangle t1 = new Triangle();
 		
-		String answer = t1.classifyTriangle(4,4,-4);
+		String answer = t1.classifyTriangle(0,3,4);
+		System.out.println("Sides of 0,3,4 - " + answer + " triangle");
+		
+		answer = t1.classifyTriangle(4,4,-4);
 		System.out.println("Sides of 4,4,-4 - " + answer + " triangle");
 
 		answer = t1.classifyTriangle(1,2,4);
@@ -48,4 +61,5 @@ public class Triangle {
 		answer = t1.classifyTriangle(3,4,5);
 		System.out.println("Sides of 3,4,5 - " + answer + " triangle");
 	}
+	
 }
