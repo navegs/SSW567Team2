@@ -47,7 +47,7 @@ public class Triangle {
 		System.out.println("Sides of 4,4,-4 - " + answer + " triangle");
 
 		answer = t1.classifyTriangle(1,2,4);
-		System.out.println("Sides of 1,3,4 - " + answer + " triangle");
+		System.out.println("Sides of 1,2,4 - " + answer + " triangle");
 
 		answer = t1.classifyTriangle(3,3,3);
 		System.out.println("Sides of 3,3,3 - " + answer + " triangle");
