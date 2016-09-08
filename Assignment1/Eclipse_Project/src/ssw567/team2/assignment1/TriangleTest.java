@@ -12,6 +12,7 @@ public class TriangleTest {
 	
 	@Before
 	public void setUp() throws Exception {
+		/* Instantiate new Triangle object before each test */
 		
 		tester = new Triangle();
 		
