@@ -30,7 +30,10 @@ public class Triangle {
 		// create new triangle
 		Triangle t1 = new Triangle();
 		
-		String answer = t1.classifyTriangle(1,2,4);
+		String answer = t1.classifyTriangle(4,4,-4);
+		System.out.println("Sides of 4,4,-4 - " + answer + " triangle");
+
+		answer = t1.classifyTriangle(1,2,4);
 		System.out.println("Sides of 1,3,4 - " + answer + " triangle");
 
 		answer = t1.classifyTriangle(3,3,3);
