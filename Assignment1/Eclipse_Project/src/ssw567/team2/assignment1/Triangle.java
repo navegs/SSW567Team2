@@ -2,7 +2,7 @@ package ssw567.team2.assignment1;
 
 public class Triangle {
 
-	public String classifyTriangle(int a, int b, int c) {
+	public String classifyTriangle(double a, double b, double c) {
 		String triType = "unknown";
 		String angleType = "";
 		
@@ -26,7 +26,7 @@ public class Triangle {
 		return angleType +  triType;
 	}
 
-	public boolean isRightAngle(int a, int b, int c) {
+	public boolean isRightAngle(double a, double b, double c) {
 		boolean result = false;
 		
 		if ((a*a + b*b == c*c) || (a*a + c*c == b*b) || (b*b + c*c == a*a)) {
@@ -40,26 +40,33 @@ public class Triangle {
 		// create new triangle
 		Triangle t1 = new Triangle();
 		
-		String answer = t1.classifyTriangle(0,3,4);
+		String answer = t1.classifyTriangle(0, 3, 4);
 		System.out.println("Sides of 0,3,4 - " + answer + " triangle");
 		
-		answer = t1.classifyTriangle(4,4,-4);
+		answer = t1.classifyTriangle(4, 4, -4);
 		System.out.println("Sides of 4,4,-4 - " + answer + " triangle");
 
-		answer = t1.classifyTriangle(1,2,4);
+		answer = t1.classifyTriangle(1, 2, 4);
 		System.out.println("Sides of 1,2,4 - " + answer + " triangle");
 
-		answer = t1.classifyTriangle(3,3,3);
+		answer = t1.classifyTriangle(3, 3, 3);
 		System.out.println("Sides of 3,3,3 - " + answer + " triangle");
 
-		answer = t1.classifyTriangle(3,3,5);
+		answer = t1.classifyTriangle(3, 3, 5);
 		System.out.println("Sides of 3,3,5 - " + answer + " triangle");
 
-		answer = t1.classifyTriangle(1,2,3);
+		answer = t1.classifyTriangle(2.4, 2.4, 2.6832);
+		System.out.println("Sides of 2.4,2.4,2.6832 - " + answer + " triangle");
+
+		answer = t1.classifyTriangle(1, 2, 3);
 		System.out.println("Sides of 1,2,3 - " + answer + " triangle");
 
-		answer = t1.classifyTriangle(3,4,5);
+		answer = t1.classifyTriangle(3.4, 3.8, 5.7);
+		System.out.println("Sides of 3.4,3.8,5.7 - " + answer + " triangle");
+		
+		answer = t1.classifyTriangle(3, 4, 5);
 		System.out.println("Sides of 3,4,5 - " + answer + " triangle");
+		
 	}
 	
 }
