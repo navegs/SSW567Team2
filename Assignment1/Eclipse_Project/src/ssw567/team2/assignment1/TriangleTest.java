@@ -37,6 +37,15 @@ public class TriangleTest {
 	}
 
 	@Test
+	public void rightScaleneTest() {
+
+		assertEquals("failure - should be Right Scalene", "Right Scalene", tester.classifyTriangle(3,4,5));
+		assertEquals("failure - should be Right Scalene", "Right Scalene", tester.classifyTriangle(4,5,3));
+		assertEquals("failure - should be Right Scalene", "Right Scalene", tester.classifyTriangle(5,3,4));
+
+	}
+
+	@Test
 	public void equilateralTest() {
 
 		assertEquals("failure - should be Equilateral", "Equilateral", tester.classifyTriangle(3,3,3));
