@@ -15,7 +15,7 @@ public class BuggyTriangle {
 		// 	If all three sides are equal, return 'Equilateral' 
 		// 	If exactly one pair of sides are equal, return 'Isoceles' // Connie - misspelled
 		// 	If not a valid triangle, then return 'NotATriangle'
-		// 	If the sum of any two sides equals the square of the third side, then return 'Right'
+		// 	If the sum of any two sides equals the square of the third side, then return 'Right' // Connie - invalid definition of right triagle
 		//
 		// BEWARE: there may be a bug or two in this code
 		
