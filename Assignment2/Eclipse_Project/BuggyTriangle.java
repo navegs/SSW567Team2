@@ -16,7 +16,7 @@ public class BuggyTriangle {
 		// 	If exactly one pair of sides are equal, return 'Isoceles' // Connie - misspelled
 		// 	If not a valid triangle, then return 'NotATriangle'
 		// 	If the sum of any two sides equals the square of the third side, then return 'Right' // Connie - invalid definition of right triagle
-		//
+		//   // Connie - missing scalene requirement
 		// BEWARE: there may be a bug or two in this code
 		
 		// require that the input values be > 0 and <= 200 
@@ -51,7 +51,7 @@ public class BuggyTriangle {
 			return "Right";
 		} // Connie - should not be part of the else if 
 		else if ((a != b) && (b != c) & (a != b)) { // Connie - should be or'ed and last check should be a!= c
-			 return "Scalene"; 
+			 return "Scalene";  // Connie - not a requirement
 		}
 		else {
 			return "Isoceles"; // Connie - misspelled but meets requirement
