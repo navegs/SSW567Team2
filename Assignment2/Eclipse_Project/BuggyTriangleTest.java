@@ -38,19 +38,19 @@ public class BuggyTriangleTest {
 	public void invalidTriangleTest() {
 
 		// Negative Numbers for each parameter
-		assertEquals("failure - should be Not a", "Not a", tester.classifyTriangle(-1, 4, 8));
-		assertEquals("failure - should be Not a", "Not a", tester.classifyTriangle(4, -1, 8));
-		assertEquals("failure - should be Not a", "Not a", tester.classifyTriangle(4, 8, -1));
+		assertEquals("failure - should be Not a", "NotATriangle", tester.classifyTriangle(-1, 4, 8));
+		assertEquals("failure - should be Not a", "NotATriangle", tester.classifyTriangle(4, -1, 8));
+		assertEquals("failure - should be Not a", "NotATriangle", tester.classifyTriangle(4, 8, -1));
 		
 		// Zeros for each parameter
-		assertEquals("failure - should be Not a", "Not a", tester.classifyTriangle(0, 4, 8));
-		assertEquals("failure - should be Not a", "Not a", tester.classifyTriangle(4, 0, 8));
-		assertEquals("failure - should be Not a", "Not a", tester.classifyTriangle(4, 8, 0));
+		assertEquals("failure - should be Not a", "NotATriangle", tester.classifyTriangle(0, 4, 8));
+		assertEquals("failure - should be Not a", "NotATriangle", tester.classifyTriangle(4, 0, 8));
+		assertEquals("failure - should be Not a", "NotATriangle", tester.classifyTriangle(4, 8, 0));
 
 		// Not a Triangle
-		assertEquals("failure - should be Not a", "Not a", tester.classifyTriangle(1, 2, 4));
-		assertEquals("failure - should be Not a", "Not a", tester.classifyTriangle(2, 4, 1));
-		assertEquals("failure - should be Not a", "Not a", tester.classifyTriangle(4, 1, 2));
+		assertEquals("failure - should be Not a", "NotATriangle", tester.classifyTriangle(1, 2, 4));
+		assertEquals("failure - should be Not a", "NotATriangle", tester.classifyTriangle(2, 4, 1));
+		assertEquals("failure - should be Not a", "NotATriangle", tester.classifyTriangle(4, 1, 2));
 
 	}
 	
