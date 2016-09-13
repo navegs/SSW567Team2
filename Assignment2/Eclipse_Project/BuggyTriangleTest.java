@@ -1,8 +1,6 @@
 package ssw567.team2.assignment1;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
 import org.junit.Test;
 import org.junit.Before;
 
@@ -17,21 +15,54 @@ public class BuggyTriangleTest {
 		
 	}
 	
-	// define multiple sets of tests as functions with names that begin 
-	// with 'test'.  Each function may include multiple tests
-
+	// 	If all three sides are equal, return 'Equilateral' 
 	@Test
-	public void testClassifyTriangle1() { // test invalid inputs
-		// your tests go here. Include as many tests as you'd like
-		assertEquals("3,4,5 is a Right triangle", "Right", tester.classifyTriangle(3, 4, 5));
+	public void equilateralTest() {
+
+		assertEquals("failure - should be Equilateral", "Equilateral", tester.classifyTriangle(3, 3, 3));
+
+	}
+
+	// 	If exactly one pair of sides are equal, return 'Isoceles' // Connie - misspelled
+	@Test
+	public void isoscelesTest() {
+
+		assertEquals("failure - should be Isoceles", "Isoceles", tester.classifyTriangle(3, 3, 5));
+		assertEquals("failure - should be Isoceles", "Isoceles", tester.classifyTriangle(3, 5, 3));
+		assertEquals("failure - should be Isoceles", "Isoceles", tester.classifyTriangle(5, 3, 3));
+		
 	}
 	
+	// 	If not a valid triangle, then return 'NotATriangle'
 	@Test
-	public void testClassifyTriangle2() { 
-		// define multiple test sets to test different aspects of the code
-		// notice that tests can have bugs too!
-		assertEquals("1,1,1 should be equilateral", "Equilateral", tester.classifyTriangle(1, 1, 1));
-		assertFalse("Should be Equilateral", "Isoceles"==tester.classifyTriangle(10, 10, 10)); //Connie - bad way to test for this
-		assertEquals("Should be Isoceles", "Scalene", tester.classifyTriangle(10,15,30)); // Connie - message is bad, this should be Scalene
-	}	
+	public void invalidTriangleTest() {
+
+		// Negative Numbers for each parameter
+		assertEquals("failure - should be Not a", "Not a", tester.classifyTriangle(-1, 4, 8));
+		assertEquals("failure - should be Not a", "Not a", tester.classifyTriangle(4, -1, 8));
+		assertEquals("failure - should be Not a", "Not a", tester.classifyTriangle(4, 8, -1));
+		
+		// Zeros for each parameter
+		assertEquals("failure - should be Not a", "Not a", tester.classifyTriangle(0, 4, 8));
+		assertEquals("failure - should be Not a", "Not a", tester.classifyTriangle(4, 0, 8));
+		assertEquals("failure - should be Not a", "Not a", tester.classifyTriangle(4, 8, 0));
+
+		// Not a Triangle
+		assertEquals("failure - should be Not a", "Not a", tester.classifyTriangle(1, 2, 4));
+		assertEquals("failure - should be Not a", "Not a", tester.classifyTriangle(2, 4, 1));
+		assertEquals("failure - should be Not a", "Not a", tester.classifyTriangle(4, 1, 2));
+
+	}
+	
+	// 	If the sum of any two sides equals the square of the third side, then return 'Right' // Connie - invalid definition of right
+	@Test
+	public void trueRightAngleTest() {
+		
+		// following invalid definition from the requirements
+		assertEquals("failure - should be true", "Right", tester.classifyTriangle(1, 3, 2)); 
+		assertEquals("failure - should be true", "Right", tester.classifyTriangle(5, 4, 3)); 
+		assertEquals("failure - should be true", "Right", tester.classifyTriangle(5, 3, 4));
+
+	}
+	
 }
