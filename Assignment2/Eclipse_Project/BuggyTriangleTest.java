@@ -58,9 +58,9 @@ public class BuggyTriangleTest {
 	@Test
 	public void trueRightAngleTest() {
 		
-		// following invalid definition from the requirements
-		assertEquals("failure - should be true", "Right", tester.classifyTriangle(1, 3, 2)); 
-		assertEquals("failure - should be true", "Right", tester.classifyTriangle(5, 4, 3)); 
+		// tested correctly despite invalid definition
+		assertEquals("failure - should be true", "Right", tester.classifyTriangle(3, 4, 5)); 
+		assertEquals("failure - should be true", "Right", tester.classifyTriangle(4, 5, 3)); 
 		assertEquals("failure - should be true", "Right", tester.classifyTriangle(5, 3, 4));
 
 	}
