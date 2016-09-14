@@ -54,9 +54,9 @@ public class BuggyTriangle {
 		if ((a==b) && (b==a)) { // Connie = should be a==b and b==c 
 			 return "Equilateral"; 
 		}
-		else if ((Math.pow(a, 2) + Math.pow(b, 2)) == Math.pow(c, 2)) { // Connie - not a requirement 
+		else if ((a*2) + (b*2) == (c*2)) { // Connie - shoudl be squared, not multiply
 			return "Right";
-		} // Connie - should not be part of the else if 
+		}  // Connie - should not be part of the else if
 		else if ((a != b) && (b != c) & (a != b)) { // Connie - should be or'ed and last check should be a!= c
 			 return "Scalene";  // Connie - not a requirement
 		}
