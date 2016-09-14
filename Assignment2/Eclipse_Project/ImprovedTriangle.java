@@ -3,8 +3,6 @@ package ssw567.team2.assignment1;
 // This file shows some simple (and buggy) python code to solve the Triangles assignment.
 // The primary goal of this file is to demonstrate a simple pyghon program and use of the
 // unittest package.
-// 
-// Note that this code includes intentional errors for you to find.
  
 public class BuggyTriangle {
 
@@ -12,57 +10,63 @@ public class BuggyTriangle {
 		// This function returns a string with the type of triangle from three integer values
 		// corresponding to the lengths of the three sides of the Triangle.
 		// return:
+		//  If any side is not between 0 and 200, return "InvalidInput"
 		// 	If all three sides are equal, return 'Equilateral' 
-		// 	If exactly one pair of sides are equal, return 'Isoceles' // Connie - misspelled
+		// 	If exactly one pair of sides are equal, return 'Isosceles'
 		// 	If not a valid triangle, then return 'NotATriangle'
-		// 	If the sum of any two sides equals the square of the third side, then return 'Right' // Connie - invalid definition of right triagle
-		//   // Connie - missing scalene requirement
-		// BEWARE: there may be a bug or two in this code
-		
+		//  If all sides are different, then return 'Scalene'
+		// 	If the sum of the square of any two sides equals the square of the third side, then return 'Right' in addition to the triangle type 
+			
 		// require that the input values be > 0 and <= 200 
-		if (a > 200 && b > 200 || c > 200) { // Connie - should be all or
+		if (a > 200 || b > 200 || c > 200) { 
 			return "InvalidInput";
 		}
 		
-		if (a <= 0 || b <= b || c < 0) { // Connie - should be b < 0 
+		if (a <= 0 || b <= 0 || c < 0) { 
 			return "InvalidInput";
 		}
 		
 		// verify that all 3 inputs are integers 
 		// Python's "isinstance(object,type) returns True if the object is of the specified type
-		
-		// Connie - can we do this?  it would not compile if not integers
-		
-		// Scott - No we can't. Python is a dynamic typed language and Java is a strong typed language.
-		// Meaning that Python gives you the tools like the isinstance method below for you to
-		// check variable types, but doesn't force it upon you. So, in Python, you could compile the program
+
+		// Python is a dynamic typed language and Java is a strong typed language.
+		// Meaning that Python gives you the tools like the isinstance method below for you to			// check variable types, but doesn't force it upon you. So, in Python, you could compile the program
 		// using incorrect variables that would throw an error at runtime
 		
 //		if (not(isinstance(a,int) and isinstance(b,int) and isinstance(c,int)) {
 //			return "InvalidInput";
 //		}
 				
-		// This information was not in the requirements spec but
-		// is important for correctness
+		// This information was not in the requirements spec but is important for correctness
 		// the sum of any two sides must be strictly less than the third side
 		// of the specified shape is not a triangle
-		if ((a >= (b-c)) || (b >= (a-c)) || (c >= (a + b))) { // Connie - should be (b >= (c-a)) and (c >= (a-b))  
+		if ((a >= (b+c)) || (b >= (c+a)) || (c >= (a + b))) { 
 			return "NotATriangle";
 		}
 		
+		String triType = "";
+
 		// now we know that we have a valid triangle
-		if ((a==b) && (b==a)) { // Connie = should be a==b and b==c 
-			 return "Equilateral"; 
+		if ((a==b) && (b==c)) {
+			triType = "Equilateral"; 
 		}
-		else if ((Math.pow(a, 2) + Math.pow(b, 2)) == Math.pow(c, 2)) { // Connie - not a requirement 
-			return "Right";
-		} // Connie - should not be part of the else if 
-		else if ((a != b) && (b != c) & (a != b)) { // Connie - should be or'ed and last check should be a!= c
-			 return "Scalene";  // Connie - not a requirement
+		else if ((a != b) || (b != c) || (a != c)) { 
+			triType = "Isosceles";  
 		}
 		else {
-			return "Isoceles"; // Connie - misspelled but meets requirement
+			triType = "Scalene"; 
 		}
+
+		if ((Math.pow(a, 2) + Math.pow(b, 2) == Math.pow(c, 2)) 
+				|| (Math.pow(b, 2) + Math.pow(c, 2) == Math.pow(b, 2)) 
+				|| (Math.pow(c, 2) + Math.pow(a, 2) == Math.pow(b, 2))) {
+			return "Right "+triType;
+		} 
+		else {
+			return triType;
+		}
+			
+
 	}
 
 	// invoke buggyTriangle with the specified arguments and print the result
@@ -70,10 +74,39 @@ public class BuggyTriangle {
 		// create new triangle
 		BuggyTriangle t1 = new BuggyTriangle();
 		
-		int a;
-		int b;
-		int c;
+		int a = 1;
+		int b = 2;
+		int c = 3;
+		System.out.println("classifyTriangle("+a+","+b+","+c+")="+t1.classifyTriangle(a,b,c)); 
 		
-		System.out.println("classifyTriangle("+a+","+b+","+c+")="+t1.classifyTriangle(a,b,b)); //Connie- should call with a,b,c	
+		a = 0;
+		b = 3;
+		c = 4;
+		System.out.println("classifyTriangle("+a+","+b+","+c+")="+t1.classifyTriangle(a,b,c)); 
+		
+		a = 4;
+		b = 4;
+		c = -4;
+		System.out.println("classifyTriangle("+a+","+b+","+c+")="+t1.classifyTriangle(a,b,c)); 
+
+		a = 1;
+		b = 2;
+		c = 4;
+		System.out.println("classifyTriangle("+a+","+b+","+c+")="+t1.classifyTriangle(a,b,c)); 
+
+		a = 3;
+		b = 3;
+		c = 3;
+		System.out.println("classifyTriangle("+a+","+b+","+c+")="+t1.classifyTriangle(a,b,c)); 
+
+		a = 3;
+		b = 3;
+		c = 5;
+		System.out.println("classifyTriangle("+a+","+b+","+c+")="+t1.classifyTriangle(a,b,c)); 
+
+		a = 3;
+		b = 4;
+		c = 5;
+		System.out.println("classifyTriangle("+a+","+b+","+c+")="+t1.classifyTriangle(a,b,c)); 
 	}	
 }
