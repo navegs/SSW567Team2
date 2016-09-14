@@ -1,6 +1,7 @@
 package ssw567.team2.assignment2;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import org.junit.Before;
 
@@ -23,30 +24,43 @@ public class BuggyTriangleTest {
 
 	}
 
-	// 	If exactly one pair of sides are equal, return 'Isoceles' // Connie - misspelled
+	// 	If exactly one pair of sides are equal, return 'Isoceles'
+	//  Scott - Corrected Isosceles spelling from Isoceles
 	@Test
 	public void isoscelesTest() {
 
-		assertEquals("failure - should be Isoceles", "Isoceles", tester.classifyTriangle(3, 3, 5));
-		assertEquals("failure - should be Isoceles", "Isoceles", tester.classifyTriangle(3, 5, 3));
-		assertEquals("failure - should be Isoceles", "Isoceles", tester.classifyTriangle(5, 3, 3));
+		assertEquals("failure - should be Isosceles", "Isosceles", tester.classifyTriangle(3, 3, 5));
+		assertEquals("failure - should be Isosceles", "Isosceles", tester.classifyTriangle(3, 5, 3));
+		assertEquals("failure - should be Isosceles", "Isosceles", tester.classifyTriangle(5, 3, 3));
 		
 	}
 	
-	// 	If not a valid triangle, then return 'NotATriangle'
+	// 	Test for invalid triangle scenarios
 	@Test
 	public void invalidTriangleTest() {
 
-		// Negative Numbers for each parameter
-		assertEquals("failure - should be Not a", "NotATriangle", tester.classifyTriangle(-1, 4, 8));
-		assertEquals("failure - should be Not a", "NotATriangle", tester.classifyTriangle(4, -1, 8));
-		assertEquals("failure - should be Not a", "NotATriangle", tester.classifyTriangle(4, 8, -1));
-		
-		// Zeros for each parameter
-		assertEquals("failure - should be Not a", "NotATriangle", tester.classifyTriangle(0, 4, 8));
-		assertEquals("failure - should be Not a", "NotATriangle", tester.classifyTriangle(4, 0, 8));
-		assertEquals("failure - should be Not a", "NotATriangle", tester.classifyTriangle(4, 8, 0));
+		// Input Out of Bounds Test: Zero & Negative Number (i.e. < 0) Test for each parameter
+		assertEquals("failure - should be InvalidInput", "InvalidInput", tester.classifyTriangle(-1, 4, 8));
+		assertEquals("failure - should be InvalidInput", "InvalidInput", tester.classifyTriangle(4, -1, 8));
+		assertEquals("failure - should be InvalidInput", "InvalidInput", tester.classifyTriangle(4, 8, -1));
 
+		
+		// Input Out of Bounds Test: > 200 Test for each parameter
+		assertEquals("failure - should be InvalidInput", "InvalidInput", tester.classifyTriangle(201, 4, 8));
+		assertEquals("failure - should be InvalidInput", "InvalidInput", tester.classifyTriangle(4, 201, 8));
+		assertEquals("failure - should be InvalidInput", "InvalidInput", tester.classifyTriangle(4, 8, 201));		
+		
+		// Input Out of Bounds Test: Zeros for each parameter
+		assertEquals("failure - should be InvalidInput", "InvalidInput", tester.classifyTriangle(0, 4, 8));
+		assertEquals("failure - should be InvalidInput", "InvalidInput", tester.classifyTriangle(4, 0, 8));
+		assertEquals("failure - should be InvalidInput", "InvalidInput", tester.classifyTriangle(4, 8, 0));
+
+	}
+	
+	// 	Test for not a triangle triangle scenarios
+	@Test
+	public void notATriangleTest() {
+		
 		// Not a Triangle
 		assertEquals("failure - should be Not a", "NotATriangle", tester.classifyTriangle(1, 2, 4));
 		assertEquals("failure - should be Not a", "NotATriangle", tester.classifyTriangle(2, 4, 1));
@@ -54,14 +68,25 @@ public class BuggyTriangleTest {
 
 	}
 	
-	// 	If the sum of any two sides equals the square of the third side, then return 'Right' // Connie - invalid definition of right
+	// Not a requirement but BuggyTriangle code outputs this, so testing for it	
+	// Test for Scalene triangle triangle scenarios
+	@Test
+	public void scaleneTriangleTest() {
+		
+		// Scalene Triangle
+		assertEquals("failure - should be Scalene", "Scalene", tester.classifyTriangle(6, 5, 4));
+
+	}
+
+	// 	If the sum of any two sides equals the square of the third side, then return 'Right'
+	//
+	// Connie - invalid definition of right
 	@Test
 	public void trueRightAngleTest() {
 		
-		// tested correctly despite invalid definition
-		assertEquals("failure - should be true", "Right", tester.classifyTriangle(3, 4, 5)); 
-		assertEquals("failure - should be true", "Right", tester.classifyTriangle(4, 5, 3)); 
-		assertEquals("failure - should be true", "Right", tester.classifyTriangle(5, 3, 4));
+		// Since there is no separate method within the class to test for right Triangle
+		// We must test for the value of "Right" in the returned string
+		assertTrue("failure - should be contain 'Right'", tester.classifyTriangle(3, 4, 5).contains("Right")); 
 
 	}
 	

@@ -116,7 +116,8 @@ public class ImprovedTriangle {
 				{0, 3, 4},
                 {4, 4, -4},
                 {3, 3, 3},
-                {3, 3, 5}
+                {3, 3, 5},
+                {6, 5, 4}
         	};
 
 		System.out.println("\n\nExtended ImprovedTriangle Input Values");
