@@ -50,7 +50,7 @@ public class BuggyTriangle {
 		if ((a==b) && (b==c)) {
 			triType = "Equilateral"; 
 		}
-		else if ((a != b) || (b != c) || (a != c)) { 
+		else if ((a == b) || (b == c) || (a == c)) { 
 			triType = "Isosceles";  
 		}
 		else {
