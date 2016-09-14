@@ -1,4 +1,4 @@
-package ssw567.team2.assignment1;
+package ssw567.team2.assignment2;
 
 // This file shows some simple (and buggy) python code to solve the Triangles assignment.
 // The primary goal of this file is to demonstrate a simple pyghon program and use of the
@@ -63,15 +63,21 @@ public class BuggyTriangle {
 		}
 	}
 
-	// invoke buggyTriangle with the specified arguments and print the result
-	public static void main(String[] args) {
-		// create new triangle
+	// run classifyTriangle
+	public static void runClassifyTriangle (int a, int b, int c) {
 		BuggyTriangle t1 = new BuggyTriangle();
 		
-		int a;
-		int b;
-		int c;
+		System.out.println("classifyTriangle(" + a + "," + b + "," + c + ")=" + t1.classifyTriangle(a, b, b)); //Connie- should call with a,b,c	
+	
+	}
+	
+	// invoke buggyTriangle with the specified arguments and print the result
+	public static void main(String[] args) {
 		
-		System.out.println("classifyTriangle("+a+","+b+","+c+")="+t1.classifyTriangle(a,b,b)); //Connie- should call with a,b,c	
-	}	
+		BuggyTriangle.runClassifyTriangle(1, 2, 3);
+		BuggyTriangle.runClassifyTriangle(1, 1, 1);
+		BuggyTriangle.runClassifyTriangle(3, 4, 5);
+		
+	}
+	
 }
