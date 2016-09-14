@@ -31,8 +31,6 @@ public class BuggyTriangle {
 		// verify that all 3 inputs are integers 
 		// Python's "isinstance(object,type) returns True if the object is of the specified type
 		
-		// Connie - can we do this?  it would not compile if not integers
-		
 		// Scott - No we can't. Python is a dynamic typed language and Java is a strong typed language.
 		// Meaning that Python gives you the tools like the isinstance method below for you to
 		// check variable types, but doesn't force it upon you. So, in Python, you could compile the program
