@@ -1,14 +1,8 @@
 package ssw567.team2.assignment4;
 
-/*
- *  This file shows some simple (and buggy) python code to solve the Triangles assignment.
- *  The primary goal of this file is to demonstrate a simple pyghon program and use of the
- *  unittest package.
- */
- 
 public class ImprovedTriangle {
 
-	public String classifyTriangle(int a, int b, int c) {
+	public String classifyTriangle(double a, double b, double c) {
 		/*
 		 * This function returns a string with the type of triangle from three integer values
 		 * corresponding to the lengths of the three sides of the Triangle.
@@ -36,12 +30,10 @@ public class ImprovedTriangle {
 		  
 		  verify that all 3 inputs are integers 
 		  Python's "isinstance(object,type) returns True if the object is of the specified type
-
 		  Python is a dynamic typed language and Java is a strong typed language.
 		  Meaning that Python gives you the tools like the isinstance method below for you to
 		  check variable types, but doesn't force it upon you. So, in Python, you could compile the program
 		  using incorrect variables that would throw an error at runtime
-
           if (not(isinstance(a,int) and isinstance(b,int) and isinstance(c,int)) {
 			return "InvalidInput";
 		  }
@@ -70,9 +62,17 @@ public class ImprovedTriangle {
 			triType = "Scalene"; 
 		}
 
-		if ((Math.pow(a, 2) + Math.pow(b, 2) == Math.pow(c, 2)) 
-				|| (Math.pow(b, 2) + Math.pow(c, 2) == Math.pow(b, 2)) 
-				|| (Math.pow(c, 2) + Math.pow(a, 2) == Math.pow(b, 2))) {
+
+		//assuming ok if 1% of hypotenuse
+		if (((Math.pow(a, 2) + Math.pow(b, 2) - Math.pow(c, 2) >= -.01)
+					&& (Math.pow(a, 2) + Math.pow(b, 2) - Math.pow(c, 2) <= .01)) 
+			|| ((Math.pow(b, 2) + Math.pow(c, 2) - Math.pow(a, 2) >= -.01)
+					&& (Math.pow(b, 2) + Math.pow(c, 2) - Math.pow(a, 2) <= .01)) 
+			|| ((Math.pow(c, 2) + Math.pow(a, 2) - Math.pow(b, 2) >= -.01)
+					&& (Math.pow(c, 2) + Math.pow(a, 2) - Math.pow(b, 2) <= .01) )  ) {
+//		if ((Math.pow(a, 2) + Math.pow(b, 2) == Math.pow(c, 2)) 
+//				|| (Math.pow(b, 2) + Math.pow(c, 2) == Math.pow(b, 2)) 
+//				|| (Math.pow(c, 2) + Math.pow(a, 2) == Math.pow(b, 2))) {
 			return "Right "+triType;
 		} 
 		else {
@@ -82,7 +82,7 @@ public class ImprovedTriangle {
 	}
 
 	// Run classifyTriangle
-	public static void runClassifyTriangle (int a, int b, int c) {
+	public static void runClassifyTriangle (double a, double b, double c) {
 		ImprovedTriangle t1 = new ImprovedTriangle();
 		
 		System.out.println("classifyTriangle(" + a + "," + b + "," + c + ") = " + t1.classifyTriangle(a, b, c)); // Scott - Corrected a, b, c from a, b, b	
@@ -90,43 +90,26 @@ public class ImprovedTriangle {
 	}
 	
 	
-	// Invoke ImprovedTriangle with the original BuggyTriangle and Extended arguments and print the results
+	// Invoke ImprovedTriangle  and print the results
 	public static void main(String[] args) {
 		
-		/*
-		 * Original BuggyTriangle input values used
-		 */
-		int[][] originalValues = {
-				{1, 2, 3}, 
+		double[][] originalValues = {
+				{1, 2, 3},
+                {0, 3, 4},
+                {4, 4, -4}, 
                 {1, 1, 1},
-                {3, 4, 5}
+                {6, 5, 4},
+                {3, 4, 5},
+                {3, 3, 5},
+                {1, 1, Math.sqrt(2)}
         	};
 		
-		System.out.println("Original BuggyTriangle Input Values");
+		System.out.println("Input Values");
 		System.out.println("------------------------------------");
 		
 		for(int i = 0; i < originalValues.length; i++) {
 			ImprovedTriangle.runClassifyTriangle(originalValues[i][0], originalValues[i][1], originalValues[i][2]); 
 		}
-		
-		/*
-		 * Extended input values for additional scenarios
-		 */
-		int[][] extendedValues = {
-				{0, 3, 4},
-                {4, 4, -4},
-                {3, 3, 3},
-                {3, 3, 5},
-                {6, 5, 4}
-        	};
-
-		System.out.println("\n\nExtended ImprovedTriangle Input Values");
-		System.out.println("------------------------------------");
-
-		for(int i = 0; i < extendedValues.length; i++) {
-			ImprovedTriangle.runClassifyTriangle(extendedValues[i][0], extendedValues[i][1], extendedValues[i][2]);
-		}
-
 	}	
 
 }
