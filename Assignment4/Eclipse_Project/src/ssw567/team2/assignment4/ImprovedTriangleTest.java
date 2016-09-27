@@ -1,4 +1,4 @@
-package ssw567.team2.assignment4;
+package ssw567.team2.assignment1;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -24,9 +24,7 @@ public class ImprovedTriangleTest {
 
 	}
 
-	// 	If exactly one pair of sides are equal, return 'Isoceles'
-	//  Scott - Corrected Isosceles spelling from Isoceles
-	@Test
+	// 	If exactly one pair of sides are equal, return 'Isosceles'	@Test
 	public void isoscelesTest() {
 
 		assertEquals("failure - should be Isosceles", "Isosceles", tester.classifyTriangle(3, 3, 5));
@@ -67,8 +65,7 @@ public class ImprovedTriangleTest {
 		assertEquals("failure - should be Not a", "NotATriangle", tester.classifyTriangle(4, 1, 2));
 
 	}
-	
-	// Not a requirement but BuggyTriangle code outputs this, so testing for it	
+
 	// Test for Scalene triangle triangle scenarios
 	@Test
 	public void scaleneTriangleTest() {
@@ -78,15 +75,14 @@ public class ImprovedTriangleTest {
 
 	}
 
-	// 	If the sum of any two sides equals the square of the third side, then return 'Right'
-	//
-	// Connie - invalid definition of right
+	// 	Test for right angle
 	@Test
 	public void trueRightAngleTest() {
 		
 		// Since there is no separate method within the class to test for right Triangle
 		// We must test for the value of "Right" in the returned string
 		assertTrue("failure - should be contain 'Right'", tester.classifyTriangle(3, 4, 5).contains("Right")); 
+		assertTrue("failure - should be contain 'Right'", tester.classifyTriangle(1, 1, 1.414).contains("Right")); 
 
 	}
 	
