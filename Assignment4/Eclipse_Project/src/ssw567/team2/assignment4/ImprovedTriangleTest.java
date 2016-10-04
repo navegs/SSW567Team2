@@ -1,4 +1,4 @@
-package ssw567.team2.assignment1;
+package ssw567.team2.assignment4;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

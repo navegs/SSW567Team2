@@ -1,4 +1,4 @@
-package ssw567.team2.assignment4;
+package ssw567.team2.assignment5;
 
 /*
  *  This file shows some simple (and buggy) python code to solve the Triangles assignment.
