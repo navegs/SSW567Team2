@@ -81,35 +81,35 @@ public class ImprovedTriangle {
 
 	}
 
-	// Run classifyTriangle
-	public static void runClassifyTriangle (double a, double b, double c) {
-		ImprovedTriangle t1 = new ImprovedTriangle();
-		
-		System.out.println("classifyTriangle(" + a + "," + b + "," + c + ") = " + t1.classifyTriangle(a, b, c)); // Scott - Corrected a, b, c from a, b, b	
-	
-	}
-	
-	
-	// Invoke ImprovedTriangle  and print the results
-	public static void main(String[] args) {
-		
-		double[][] originalValues = {
-				{1, 2, 3},
-                {0, 3, 4},
-                {4, 4, -4}, 
-                {1, 1, 1},
-                {6, 5, 4},
-                {3, 4, 5},
-                {3, 3, 5},
-                {1, 1, Math.sqrt(2)}
-        	};
-		
-		System.out.println("Input Values");
-		System.out.println("------------------------------------");
-		
-		for(int i = 0; i < originalValues.length; i++) {
-			ImprovedTriangle.runClassifyTriangle(originalValues[i][0], originalValues[i][1], originalValues[i][2]); 
-		}
-	}	
+//	// Run classifyTriangle
+//	public static void runClassifyTriangle (double a, double b, double c) {
+//		ImprovedTriangle t1 = new ImprovedTriangle();
+//		
+//		System.out.println("classifyTriangle(" + a + "," + b + "," + c + ") = " + t1.classifyTriangle(a, b, c)); // Scott - Corrected a, b, c from a, b, b	
+//	
+//	}
+//	
+//	
+//	// Invoke ImprovedTriangle  and print the results
+//	public static void main(String[] args) {
+//		
+//		double[][] originalValues = {
+//				{1, 2, 3},
+//                {0, 3, 4},
+//                {4, 4, -4}, 
+//                {1, 1, 1},
+//                {6, 5, 4},
+//                {3, 4, 5},
+//                {3, 3, 5},
+//                {1, 1, Math.sqrt(2)}
+//        	};
+//		
+//		System.out.println("Input Values");
+//		System.out.println("------------------------------------");
+//		
+//		for(int i = 0; i < originalValues.length; i++) {
+//			ImprovedTriangle.runClassifyTriangle(originalValues[i][0], originalValues[i][1], originalValues[i][2]); 
+//		}
+//	}	
 
 }
