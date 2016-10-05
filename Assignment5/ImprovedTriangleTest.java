@@ -25,7 +25,8 @@ public class ImprovedTriangleTest {
 
 	}
 
-	// 	If exactly one pair of sides are equal, return 'Isosceles'	@Test
+	// 	If exactly one pair of sides are equal, return 'Isosceles'	
+	@Test
 	public void isoscelesTest() {
 
 		assertEquals("failure - should be Isosceles", "Isosceles", tester.classifyTriangle(3, 3, 5));
