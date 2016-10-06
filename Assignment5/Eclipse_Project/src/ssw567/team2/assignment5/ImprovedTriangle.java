@@ -1,5 +1,7 @@
 package ssw567.team2.assignment5;
 
+import java.math.BigDecimal;
+
 /*
  *  This file shows some simple (and buggy) python code to solve the Triangles assignment.
  *  The primary goal of this file is to demonstrate a simple pyghon program and use of the
@@ -8,7 +10,7 @@ package ssw567.team2.assignment5;
  
 public class ImprovedTriangle {
 
-	public String classifyTriangle(int a, int b, int c) {
+	public String classifyTriangle(double a, double b, double c) {
 		/*
 		 * This function returns a string with the type of triangle from three integer values
 		 * corresponding to the lengths of the three sides of the Triangle.
@@ -70,9 +72,7 @@ public class ImprovedTriangle {
 			triType = "Scalene"; 
 		}
 
-		if ((Math.pow(a, 2) + Math.pow(b, 2) == Math.pow(c, 2)) 
-				|| (Math.pow(b, 2) + Math.pow(c, 2) == Math.pow(b, 2)) 
-				|| (Math.pow(c, 2) + Math.pow(a, 2) == Math.pow(b, 2))) {
+		if (isRightTriangle(a, b, c)) {
 			return "Right "+triType;
 		} 
 		else {
@@ -80,9 +80,41 @@ public class ImprovedTriangle {
 		}			
 
 	}
-
+	
+	/*
+	 * Method to precisely compare double numbers without rounding errors
+	 * 
+	 * @param a First number to compare
+	 * @param b Second number to compare
+	 * @param places Number of places that the comparison should use for precision
+	 * 
+	 * @return 0 if both numbers are equal, -1 for a < b, or 1 for a > b
+	 */
+	public int precisionCompare(double a, double b, int places) {
+		BigDecimal bd1 = new BigDecimal(a).setScale(places, BigDecimal.ROUND_HALF_EVEN);
+		BigDecimal bd2 = new BigDecimal(b).setScale(places, BigDecimal.ROUND_HALF_EVEN);
+		
+		return bd1.compareTo(bd2);
+	}
+	
+	/*
+	 * Method to identify right triangles
+	 */
+	public boolean isRightTriangle(double a, double b, double c) {
+		if ((precisionCompare((Math.pow(a, 2) + Math.pow(b, 2)), Math.pow(c, 2), 3) == 0) 
+				|| (precisionCompare((Math.pow(b, 2) + Math.pow(c, 2)), Math.pow(b, 2), 3) == 0) 
+				|| (precisionCompare((Math.pow(c, 2) + Math.pow(a, 2)), Math.pow(b, 2), 3) == 0)) {
+			
+			return true;
+			
+		}
+		else {
+			return false;
+		}
+	}
+	
 	// Run classifyTriangle
-	public static void runClassifyTriangle (int a, int b, int c) {
+	public static void runClassifyTriangle (double a, double b, double c) {
 		ImprovedTriangle t1 = new ImprovedTriangle();
 		
 		System.out.println("classifyTriangle(" + a + "," + b + "," + c + ") = " + t1.classifyTriangle(a, b, c)); // Scott - Corrected a, b, c from a, b, b	
@@ -96,7 +128,7 @@ public class ImprovedTriangle {
 		/*
 		 * Original BuggyTriangle input values used
 		 */
-		int[][] originalValues = {
+		double[][] originalValues = {
 				{1, 2, 3}, 
                 {1, 1, 1},
                 {3, 4, 5}
@@ -112,7 +144,7 @@ public class ImprovedTriangle {
 		/*
 		 * Extended input values for additional scenarios
 		 */
-		int[][] extendedValues = {
+		double[][] extendedValues = {
 				{0, 3, 4},
                 {4, 4, -4},
                 {3, 3, 3},

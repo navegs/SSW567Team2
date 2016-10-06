@@ -2,6 +2,7 @@ package ssw567.team2.assignment5;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 import org.junit.Test;
 import org.junit.Before;
 
@@ -72,22 +73,51 @@ public class ImprovedTriangleTest {
 	// Test for Scalene triangle triangle scenarios
 	@Test
 	public void scaleneTriangleTest() {
-		
-		// Scalene Triangle
+
 		assertEquals("failure - should be Scalene", "Scalene", tester.classifyTriangle(6, 5, 4));
 
 	}
 
-	// 	If the sum of any two sides equals the square of the third side, then return 'Right'
-	//
-	// Connie - invalid definition of right
+	// 	Test that "right" triangles are identified correctly
 	@Test
 	public void trueRightAngleTest() {
 		
-		// Since there is no separate method within the class to test for right Triangle
-		// We must test for the value of "Right" in the returned string
-		assertTrue("failure - should be contain 'Right'", tester.classifyTriangle(3, 4, 5).contains("Right")); 
+		assertTrue("failure - should be true", tester.isRightTriangle(3, 4, 5)); 
 
 	}
 	
+	// 	Test that non "right" triangles are identified correctly
+	@Test
+	public void falseRightAngleTest() {
+		
+		assertFalse("failure - should be false", tester.isRightTriangle(6, 5, 4)); 
+
+	}
+
+	// Test for Right Scalene triangle 
+	@Test
+	public void rightScaleneTest() {
+
+		assertEquals("failure - should be Right Scalene", "Right Scalene", tester.classifyTriangle(3, 4, 5));
+
+	}
+
+	//	Test for Right Isosceles triangle
+	@Test
+	public void rightIsoscelesTest() {
+
+		assertEquals("failure - should be Right Isosceles", "Right Isosceles", tester.classifyTriangle(1,1,Math.sqrt(2)));
+
+	}
+	
+	// Test for Precision
+	@Test
+	public void precisionTest() {
+		
+		assertEquals("failure - should be 0", 0, tester.precisionCompare(1, 1.000, 3));
+		assertEquals("failure - should be -1", -1, tester.precisionCompare(1, 1.001, 3));
+		assertEquals("failure - should be 1", 1, tester.precisionCompare(1, .999, 3));
+		
+	}
+
 }
