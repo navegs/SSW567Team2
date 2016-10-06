@@ -102,7 +102,7 @@ public class ImprovedTriangle {
 	 */
 	public boolean isRightTriangle(double a, double b, double c) {
 		if ((precisionCompare((Math.pow(a, 2) + Math.pow(b, 2)), Math.pow(c, 2), 3) == 0) 
-				|| (precisionCompare((Math.pow(b, 2) + Math.pow(c, 2)), Math.pow(b, 2), 3) == 0) 
+				|| (precisionCompare((Math.pow(b, 2) + Math.pow(c, 2)), Math.pow(a, 2), 3) == 0) 
 				|| (precisionCompare((Math.pow(c, 2) + Math.pow(a, 2)), Math.pow(b, 2), 3) == 0)) {
 			
 			return true;
@@ -117,7 +117,7 @@ public class ImprovedTriangle {
 	public static void runClassifyTriangle (double a, double b, double c) {
 		ImprovedTriangle t1 = new ImprovedTriangle();
 		
-		System.out.println("classifyTriangle(" + a + "," + b + "," + c + ") = " + t1.classifyTriangle(a, b, c)); // Scott - Corrected a, b, c from a, b, b	
+		System.out.println("classifyTriangle(" + a + "," + b + "," + c + ") = " + t1.classifyTriangle(a, b, c));
 	
 	}
 	

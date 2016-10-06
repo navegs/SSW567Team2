@@ -26,7 +26,6 @@ public class ImprovedTriangleTest {
 	}
 
 	// 	If exactly one pair of sides are equal, return 'Isoceles'
-	//  Scott - Corrected Isosceles spelling from Isoceles
 	@Test
 	public void isoscelesTest() {
 
@@ -83,7 +82,9 @@ public class ImprovedTriangleTest {
 	public void trueRightAngleTest() {
 		
 		assertTrue("failure - should be true", tester.isRightTriangle(3, 4, 5)); 
-
+		assertTrue("failure - should be true", tester.isRightTriangle(5, 3, 4));
+		assertTrue("failure - should be true", tester.isRightTriangle(3, 5, 4));
+		
 	}
 	
 	// 	Test that non "right" triangles are identified correctly
@@ -119,5 +120,4 @@ public class ImprovedTriangleTest {
 		assertEquals("failure - should be 1", 1, tester.precisionCompare(1, .999, 3));
 		
 	}
-
 }
