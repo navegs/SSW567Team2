@@ -117,7 +117,7 @@ public class ImprovedTriangleTest {
 
 		// Test boundary success
 		assertTrue("failure - should be true", tester.precisionCompare(1, 1.00));
-		assertTrue("failure - should be false", tester.precisionCompare(1, 1.01));
+		assertTrue("failure - should be true", tester.precisionCompare(1, 1.01));
 		assertTrue("failure - should be true", tester.precisionCompare(1, .99));
 		
 		// Test boundary failures

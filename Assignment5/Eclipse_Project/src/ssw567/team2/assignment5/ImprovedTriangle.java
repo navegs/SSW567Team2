@@ -74,7 +74,8 @@ public class ImprovedTriangle {
 	 * @param a First number to compare
 	 * @param b Second number to compare
 	 * 
-	 * @return boolean Returns true if the two number values are within the provided tolerance level
+	 * @return boolean Returns true if the two number values are within the class
+	 *                 defined tolerance level
 	 */
 	public boolean precisionCompare(double a, double b) {
 		BigDecimal bd1 = new BigDecimal(a).setScale(digits, BigDecimal.ROUND_HALF_UP);
