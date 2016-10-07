@@ -114,10 +114,15 @@ public class ImprovedTriangleTest {
 	// Test for Precision
 	@Test
 	public void precisionTest() {
+
+		// Test boundary success
+		assertTrue("failure - should be true", tester.precisionCompare(1, 1.00));
+		assertTrue("failure - should be false", tester.precisionCompare(1, 1.01));
+		assertTrue("failure - should be true", tester.precisionCompare(1, .99));
 		
-		assertEquals("failure - should be 0", 0, tester.precisionCompare(1, 1.000, 3));
-		assertEquals("failure - should be -1", -1, tester.precisionCompare(1, 1.001, 3));
-		assertEquals("failure - should be 1", 1, tester.precisionCompare(1, .999, 3));
+		// Test boundary failures
+		assertFalse("failure - should be false", tester.precisionCompare(1, 1.02));
+		assertFalse("failure - should be false", tester.precisionCompare(1, .98));
 		
 	}
 }
