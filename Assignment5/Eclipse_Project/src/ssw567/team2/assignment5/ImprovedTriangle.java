@@ -6,8 +6,6 @@ import java.math.BigDecimal;
  
 public class ImprovedTriangle {
 
-	// Number of significant digits that should be used when comparing two sides
-	int digits = 3;
 	// Tolerance or Precision: Allowed variance between two numbers to be considered equal
 	double tolerance = .01;
 
@@ -105,50 +103,50 @@ public class ImprovedTriangle {
 		}
 	}
 
-//	// Run classifyTriangle
-//	public static void runClassifyTriangle (double a, double b, double c) {
-//		ImprovedTriangle t1 = new ImprovedTriangle();
-//		
-//		System.out.println("classifyTriangle(" + a + "," + b + "," + c + ") = " + t1.classifyTriangle(a, b, c));
-//
-//	}
-//	
-//
-//	// Invoke ImprovedTriangle with the original BuggyTriangle and Extended arguments and print the results
-//	public static void main(String[] args) {
-//		
-//		
-//		// Original BuggyTriangle input values used
-//		double[][] originalValues = {
-//				{1, 2, 3}, 
-//                {1, 1, 1},
-//                {3, 4, 5}
-//        	};
-//		
-//		System.out.println("Original BuggyTriangle Input Values");
-//		System.out.println("------------------------------------");
-//		
-//		for(int i = 0; i < originalValues.length; i++) {
-//			ImprovedTriangle.runClassifyTriangle(originalValues[i][0], originalValues[i][1], originalValues[i][2]); 
-//		}
-//		
-//		
-//		// Extended input values for additional scenarios
-//		double[][] extendedValues = {
-//				{0, 3, 4},
-//                {4, 4, -4},
-//                {3, 3, 3},
-//                {3, 3, 5},
-//                {6, 5, 4}
-//        	};
-//
-//		System.out.println("\n\nExtended ImprovedTriangle Input Values");
-//		System.out.println("------------------------------------");
-//
-//		for(int i = 0; i < extendedValues.length; i++) {
-//			ImprovedTriangle.runClassifyTriangle(extendedValues[i][0], extendedValues[i][1], extendedValues[i][2]);
-//		}
-//
-//	}
+	// Run classifyTriangle
+	public static void runClassifyTriangle (double a, double b, double c) {
+		ImprovedTriangle t1 = new ImprovedTriangle();
+		
+		System.out.println("classifyTriangle(" + a + "," + b + "," + c + ") = " + t1.classifyTriangle(a, b, c));
+
+	}
+	
+
+	// Invoke ImprovedTriangle with the original BuggyTriangle and Extended arguments and print the results
+	public static void main(String[] args) {
+		
+		
+		// Original BuggyTriangle input values used
+		double[][] originalValues = {
+				{1, 2, 3}, 
+                {1, 1, 1},
+                {3, 4, 5}
+        	};
+		
+		System.out.println("Original BuggyTriangle Input Values");
+		System.out.println("------------------------------------");
+		
+		for(int i = 0; i < originalValues.length; i++) {
+			ImprovedTriangle.runClassifyTriangle(originalValues[i][0], originalValues[i][1], originalValues[i][2]); 
+		}
+		
+		
+		// Extended input values for additional scenarios
+		double[][] extendedValues = {
+				{0, 3, 4},
+                {4, 4, -4},
+                {3, 3, 3},
+                {3, 3, 5},
+                {6, 5, 4}
+        	};
+
+		System.out.println("\n\nExtended ImprovedTriangle Input Values");
+		System.out.println("------------------------------------");
+
+		for(int i = 0; i < extendedValues.length; i++) {
+			ImprovedTriangle.runClassifyTriangle(extendedValues[i][0], extendedValues[i][1], extendedValues[i][2]);
+		}
+
+	}
 
 }
