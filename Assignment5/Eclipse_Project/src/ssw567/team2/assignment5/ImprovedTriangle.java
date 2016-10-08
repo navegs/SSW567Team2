@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 public class ImprovedTriangle {
 
 	// Number of significant digits that should be used when comparing two sides
-	int digits = 2;
+	int digits = 3;
 	// Tolerance or Precision: Allowed variance between two numbers to be considered equal
 	double tolerance = .01;
 
