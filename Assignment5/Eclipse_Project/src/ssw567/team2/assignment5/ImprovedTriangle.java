@@ -78,10 +78,10 @@ public class ImprovedTriangle {
 	 *                 defined tolerance level
 	 */
 	public boolean precisionCompare(double a, double b) {
-		BigDecimal bd1 = new BigDecimal(a).setScale(digits, BigDecimal.ROUND_HALF_UP);
-		BigDecimal bd2 = new BigDecimal(b).setScale(digits, BigDecimal.ROUND_HALF_UP);
+		BigDecimal bd1 = BigDecimal.valueOf(a);
+		BigDecimal bd2 = BigDecimal.valueOf(b);
 		
-		BigDecimal precision = new BigDecimal(tolerance).setScale(digits, BigDecimal.ROUND_HALF_UP);
+		BigDecimal precision = BigDecimal.valueOf(tolerance);
 		
 		// Used for debugging. Uncomment line below to see comparison output
 		// System.out.println(bd1.doubleValue() + " " + bd2.doubleValue() + " (" + Math.abs(bd1.subtract(bd2).doubleValue()) + " : " + (Math.abs(bd1.subtract(bd2).doubleValue()) <= precision.doubleValue()) + ")");
