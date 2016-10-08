@@ -21,7 +21,7 @@ public class ImprovedTriangleTest {
 	@Test
 	public void equilateralTest() {
 
-		assertEquals("failure - should be Equilateral", "Equilateral", tester.classifyTriangle(3, 3, 3));
+		assertEquals("failure - should be Equilateral", "Equilateral", tester.classifyTriangle(200, 200, 200));
 
 	}
 
@@ -40,15 +40,15 @@ public class ImprovedTriangleTest {
 	public void invalidTriangleTest() {
 
 		// Input Out of Bounds Test: Zero & Negative Number (i.e. < 0) Test for each parameter
-		assertEquals("failure - should be InvalidInput", "InvalidInput", tester.classifyTriangle(-1, 4, 8));
-		assertEquals("failure - should be InvalidInput", "InvalidInput", tester.classifyTriangle(4, -1, 8));
-		assertEquals("failure - should be InvalidInput", "InvalidInput", tester.classifyTriangle(4, 8, -1));
+		assertEquals("failure - should be InvalidInput", "InvalidInput", tester.classifyTriangle(-.001, 4, 8));
+		assertEquals("failure - should be InvalidInput", "InvalidInput", tester.classifyTriangle(4, -.001, 8));
+		assertEquals("failure - should be InvalidInput", "InvalidInput", tester.classifyTriangle(4, 8, -.001));
 
 		
 		// Input Out of Bounds Test: > 200 Test for each parameter
-		assertEquals("failure - should be InvalidInput", "InvalidInput", tester.classifyTriangle(201, 4, 8));
-		assertEquals("failure - should be InvalidInput", "InvalidInput", tester.classifyTriangle(4, 201, 8));
-		assertEquals("failure - should be InvalidInput", "InvalidInput", tester.classifyTriangle(4, 8, 201));		
+		assertEquals("failure - should be InvalidInput", "InvalidInput", tester.classifyTriangle(200.001, 4, 8));
+		assertEquals("failure - should be InvalidInput", "InvalidInput", tester.classifyTriangle(4, 200.001, 8));
+		assertEquals("failure - should be InvalidInput", "InvalidInput", tester.classifyTriangle(4, 8, 200.001));		
 		
 		// Input Out of Bounds Test: Zeros for each parameter
 		assertEquals("failure - should be InvalidInput", "InvalidInput", tester.classifyTriangle(0, 4, 8));
@@ -62,9 +62,9 @@ public class ImprovedTriangleTest {
 	public void notATriangleTest() {
 		
 		// Not a Triangle
-		assertEquals("failure - should be Not a", "NotATriangle", tester.classifyTriangle(1, 2, 4));
-		assertEquals("failure - should be Not a", "NotATriangle", tester.classifyTriangle(2, 4, 1));
-		assertEquals("failure - should be Not a", "NotATriangle", tester.classifyTriangle(4, 1, 2));
+		assertEquals("failure - should be Not a", "NotATriangle", tester.classifyTriangle(.001, 2, 4));
+		assertEquals("failure - should be Not a", "NotATriangle", tester.classifyTriangle(2, 4, .001));
+		assertEquals("failure - should be Not a", "NotATriangle", tester.classifyTriangle(4, .001, 2));
 
 	}
 	
@@ -121,8 +121,8 @@ public class ImprovedTriangleTest {
 		assertTrue("failure - should be true", tester.precisionCompare(1, .99));
 		
 		// Test boundary failures
-		assertFalse("failure - should be false", tester.precisionCompare(1, 1.02));
-		assertFalse("failure - should be false", tester.precisionCompare(1, .98));
+		assertFalse("failure - should be false", tester.precisionCompare(1, 1.011));
+		assertFalse("failure - should be false", tester.precisionCompare(1, .989));
 		
 	}
 }
